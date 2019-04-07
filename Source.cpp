@@ -1,100 +1,33 @@
 
-/*вывод всех четных чисел*/
-
-
-/*#include <iostream>   
-using namespace std;
-
-int main()
-{
-	int A, B;
-	cin >> A >> B;
-
-	for (int i = A; i < B; i++)
-		if ( i % 2 == 0)  cout << i << " ";
-	system("pause");
-	return 0;
-}
-*/
-
-
-
-/*вывод всех чисел от и до*/
-/*#include <iostream>
-using namespace std;
-
-int main()
-{
-	int A, B;
-	cin >> A >> B;
-
-	for (int i = A; i <= B; i++)
-		cout << i << endl;
-	system("pause");
-	return 0;
-}*/
-
-
-
-/*вывод от и до в обратном порядке*/
-/*#include <iostream>
-using namespace std;
-
-int main()
-{
-	int A, B;
-	cin >> A >> B;
-
-	for (int i = B; i >= A; i--)
-		cout << i << endl;
-	system("pause");
-	return 0;
-}*/
-
-
-/*сумма не четных*/
-/*#include <iostream>
-using namespace std;
-
-int main()
-{
-	int A, B, S = 0;
-	cin >> A >> B;
-
-	for (int i = A; i < B; i++)
-		if (i % 2 != 0) 
-			S = S + i;
-			cout <<S << " ";
-	system("pause");
-	return 0;
-}*/
-
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int main()
 {
-	setlocale (LC_ALL,"Rus");
-	int a,b,c,d,s;
+	const int row = 5;
+	const int col = 5;
+	int i, j;
+	int mas[row][col];
 
-	cin >> a;
-	if (a >= 100)
+	for (i = 0; i < row; i++)
 	{
-		b = (a / 100);
-		c = (a % 100) / 10;
-		d = (a % 100) % 10;
-		s = b + c + d;
-		cout << b << '\n' << c << '\n' << d << '\n';
-		cout << "сумма этих цифр " << s << '\n';
+		for (j = 0; j < col; j++)
+		{
+			mas[i][j] = (i + 1) * 10 + (j + 1);
+		}
 	}
-	else
+
+	for (i = 0; i < row; i++)
 	{
-		b = a / 10;
-		c = a % 10;
-		s = b + c;
-		cout << b << '\n' << c << '\n';
-		cout << "сумма этих цифр " << s <<'\n';
+		for (j =  0 ; j <= i && i + j + 1 <= col ;j++)
+		{
+			cout << mas[i][j] << "\t";
+		}
+		cout << endl;
 	}
 	system("pause");
 	return 0;
 }
+
+
